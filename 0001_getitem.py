@@ -24,7 +24,7 @@ print(dir(myclass))
 print(myclass[2])
 
 for item in myclass:
-    print(item)
+    print(item)  # 相当于打印myclass[0]
     break
 
 
@@ -44,9 +44,11 @@ do something with name
 where obj is an internal variable, and the next method indicates end of data by raising the StopIterator exception, instead of IndexError
     """
     def __iter__(self):
+        # 可迭代类
         return self
 
     def __next__(self):
+        # 含有__next__为迭代器
         return 1
 
 for item in MyClass1():
